@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        
+    </ul>
+    <button onclick="add()">add</button>
+</body>
+<script>
+    function add(){
+        var todo=prompt("enter your task")
+        var task=document.createElement("li")
+        task.innerHTML=`${todo}<button onclick="rm(this)">remove</button>`
+        document.querySelector("ul").append(task)
+    }
+    function rm(e){
+        let d=e.parentElement;
+        d.remove();
+    }
+</script>
+</html>
