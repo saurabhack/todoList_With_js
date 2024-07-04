@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+
+    </ul>
+    <button onclick="addTodos()">add</button>
+</body>
+<script>
+    var todos=[];
+function addTodos(){
+    var todo=window.prompt("enter your todo")
+    todos.push(todo)
+    showTodos();
+}
+function showTodos(){
+    document.querySelector("ul").innerHTML=""
+    todos.forEach((val,i)=>{
+        document.querySelector("ul").innerHTML+=`<li>${val}<button onclick="removeElement(${i})">remove</button><button onclick="update(${i})">update</button></li>`
+    })
+}
+function removeElement(i){
+    delete todos[i];
+    showTodos();
+}
+function update(i){
+    let todo=prompt("enter todo for update")
+    todos[i]=todo
+    showTodos();
+
+}
+
+</script>
+</html>
